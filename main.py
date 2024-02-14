@@ -25,3 +25,5 @@ while True:
     content = input(">> ")
     result = chain({"content": content})
     print(result["text"])
+
+Test
