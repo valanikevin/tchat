@@ -10,10 +10,10 @@ load_dotenv()
 chat = ChatOpenAI()
 
 memory = ConversationSummaryMemory(
-    memory_key="messages", return_messages=True, 
-    #chat_memory=FileChatMessageHistory("messages.json")
+    memory_key="messages", return_messages=True,
+    # chat_memory=FileChatMessageHistory("messages.json")
     llm=chat
-    )
+)
 
 
 prompt = ChatPromptTemplate(
@@ -27,7 +27,8 @@ prompt = ChatPromptTemplate(
 chain = LLMChain(
     llm=chat,
     prompt=prompt,
-    memory=memory
+    memory=memory,
+    verbose=True
 )
 
 while True:
